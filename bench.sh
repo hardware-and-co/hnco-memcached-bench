@@ -13,7 +13,7 @@ memcached -t ${NB_THREADS} &
 MEMCACHED_PID=$!
 sleep 2
 
-/usr/local/bin/memtier_benchmark --protocol=memcache_text --key-pattern P:P --port=11211 --hide-histogram -t $((NB_THREADS/2)) -n $((524288/NB_THREADS/2)) -o /tmp/memtier_results
+/usr/local/bin/memtier_benchmark --protocol=memcache_text --key-pattern P:P --port=11211 --hide-histogram -t 4 -n 65536 -o /tmp/memtier_results
 
 echo "" 1>&2
 
